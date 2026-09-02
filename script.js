@@ -22,3 +22,46 @@ window.addEventListener('load', function () {
   }, reduced ? 150 : 700);
 });
 
+/* ---- Cookie consent ---- */
+function loadMapIfConsented() {
+  var slot = document.getElementById('map-slot');
+  if (!slot) return;
+  if (localStorage.getItem('albero-cookies') === 'accepted') {
+    var src = slot.getAttribute('data-src');
+    slot.innerHTML = '<iframe class="map-frame" loading="lazy" src="' + src + '"></iframe>';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var banner = document.getElementById('cookie-banner');
+  var choice = localStorage.getItem('albero-cookies');
+
+  if (banner && !choice) {
+    setTimeout(function () { banner.classList.add('show'); }, 600);
+  }
+
+  function setChoice(value) {
+    localStorage.setItem('albero-cookies', value);
+    if (banner) banner.classList.remove('show');
+    loadMapIfConsented();
+  }
+
+  var acceptBtn = document.getElementById('cookie-accept');
+  var rejectBtn = document.getElementById('cookie-reject');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { setChoice('accepted'); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { setChoice('rejected'); });
+
+  var mapEnableBtn = document.getElementById('map-enable');
+  if (mapEnableBtn) mapEnableBtn.addEventListener('click', function () { setChoice('accepted'); });
+
+  var reopenBtn = document.getElementById('reopen-cookies');
+  if (reopenBtn && banner) {
+    reopenBtn.addEventListener('click', function () {
+      banner.classList.add('show');
+    });
+  }
+
+  loadMapIfConsented();
+});
+
+

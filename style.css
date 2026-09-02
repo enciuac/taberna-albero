@@ -322,6 +322,53 @@ nav.links .nav-call{display:none;}
 .hours-row .day{font-weight:500;}
 .hours-row .closed{color:#8a8378;}
 .map-frame{border:0; width:100%; height:100%; min-height:360px; border-radius:2px; filter:grayscale(0.15) sepia(0.08);}
+.map-slot{min-height:360px; height:100%; border-radius:2px; overflow:hidden;}
+.map-fallback{
+  height:100%; min-height:360px; background:var(--cream); border:1px dashed #B9AE95; border-radius:2px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  gap:14px; padding:30px;
+}
+.map-fallback p{max-width:34ch; margin:0; color:#4a453d;}
+.map-fallback .btn-ghost-dark{margin-left:0;}
+.btn-ghost-dark{background:var(--sand); border:1px solid var(--line); color:var(--ink); cursor:pointer;}
+.btn-ghost-dark:hover{background:var(--sand-2);}
+button.btn{font-family:inherit; cursor:pointer;}
+
+/* ---------- Cookie banner ---------- */
+.cookie-banner{
+  position:fixed; left:0; right:0; bottom:0; z-index:150;
+  background:var(--wine-2); color:var(--sand-2);
+  padding:20px 24px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+  justify-content:space-between;
+  transform:translateY(100%); transition:transform .35s ease;
+}
+.cookie-banner.show{transform:translateY(0);}
+.cookie-banner p{margin:0; max-width:640px; font-size:0.94rem; line-height:1.5;}
+.cookie-banner a{color:var(--ochre); text-decoration:underline;}
+.cookie-actions{display:flex; gap:12px; flex:none;}
+.cookie-actions .btn{padding:10px 20px; font-size:0.92rem;}
+@media (max-width:640px){
+  .cookie-banner{padding:18px 18px 20px; flex-direction:column; align-items:stretch;}
+  .cookie-actions{justify-content:stretch;}
+  .cookie-actions .btn{flex:1; justify-content:center;}
+}
+
+/* ---------- Footer legal row ---------- */
+.footer-legal{margin-top:14px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; font-size:0.88rem;}
+.footer-legal a{opacity:.75; text-decoration:none;}
+.footer-legal a:hover{opacity:1; text-decoration:underline;}
+.footer-legal span{opacity:.4;}
+
+/* ---------- Legal pages ---------- */
+.legal-wrap{max-width:760px; margin:0 auto; padding:76px 24px 100px;}
+.legal-body h2{font-family:'Lora',serif; font-weight:600; font-size:1.2rem; color:var(--wine); margin:34px 0 12px;}
+.legal-body h2:first-child{margin-top:0;}
+.legal-body p{margin:0 0 14px;}
+.legal-body ul{margin:0 0 14px; padding-left:22px;}
+.legal-body li{margin-bottom:6px;}
+.legal-body table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:0.94rem;}
+.legal-body th, .legal-body td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line);}
+.legal-body th{color:var(--ochre-dark); font-weight:600;}
 .social-row{display:flex; gap:14px; margin-top:6px;}
 .social-row a{
   width:40px; height:40px; border-radius:50%; border:1px solid var(--line);
