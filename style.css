@@ -2,7 +2,7 @@
   --sand:#F2E9D8;
   --sand-2:#EADFC8;
   --ochre:#C08A2E;
-  --ochre-dark:#96691E;
+  --ochre-dark:#785418;
   --wine:#4A2420;
   --wine-2:#3A1B18;
   --tile:#34526F;
@@ -33,6 +33,15 @@ img{max-width:100%;display:block;}
 .mark{display:inline-block;}
 .mark svg{display:block;height:100%;width:auto;}
 .mark path{fill:currentColor;}
+
+/* ---------- Skip link ---------- */
+.skip-link{
+  position:absolute; left:12px; top:-60px; z-index:400;
+  background:var(--ochre); color:var(--wine-2); padding:12px 18px;
+  border-radius:2px; text-decoration:none; font-weight:600;
+  transition:top .15s ease;
+}
+.skip-link:focus{top:12px;}
 
 /* ---------- Page loader ---------- */
 .loader{
@@ -276,7 +285,20 @@ nav.links .nav-call{display:none;}
 .menu-hero{background:var(--wine-2); color:var(--cream); padding:64px 24px 48px; text-align:center;}
 .menu-hero h1{font-size:clamp(2.2rem,5vw,3.2rem); color:var(--cream);}
 .menu-hero p{color:var(--sand-2); margin-top:12px;}
-.menu-wrap{max-width:900px; margin:0 auto; padding:64px 24px 100px;}
+.menu-jump{
+  position:sticky; top:65px; z-index:30;
+  background:var(--sand); border-bottom:1px solid var(--line);
+  display:flex; gap:26px; overflow-x:auto;
+  padding:16px 24px; max-width:900px; margin:0 auto;
+  scrollbar-width:none;
+}
+.menu-jump::-webkit-scrollbar{display:none;}
+.menu-jump a{
+  text-decoration:none; color:var(--ink); opacity:.7; white-space:nowrap; font-size:0.94rem;
+  border-bottom:2px solid transparent; padding-bottom:2px;
+}
+.menu-jump a.active{opacity:1; border-color:var(--ochre); color:var(--wine);}
+.menu-wrap{max-width:900px; margin:0 auto; padding:56px 24px 100px;}
 .menu-cat{margin-bottom:56px;}
 .menu-cat:last-child{margin-bottom:0;}
 .menu-cat-head{
@@ -320,7 +342,7 @@ nav.links .nav-call{display:none;}
 .hours-row{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--line); font-size:0.98rem;}
 .hours-row:last-child{border-bottom:none;}
 .hours-row .day{font-weight:500;}
-.hours-row .closed{color:#8a8378;}
+.hours-row .closed{color:#68625A;}
 .map-frame{border:0; width:100%; height:100%; min-height:360px; border-radius:2px; filter:grayscale(0.15) sepia(0.08);}
 .map-slot{min-height:360px; height:100%; border-radius:2px; overflow:hidden;}
 .map-fallback{

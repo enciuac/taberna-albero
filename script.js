@@ -62,6 +62,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   loadMapIfConsented();
+
+  /* ---- Menu category scroll-spy ---- */
+  var jumpLinks = document.querySelectorAll('.menu-jump a');
+  if (jumpLinks.length) {
+    var cats = Array.prototype.map.call(jumpLinks, function (a) {
+      return document.getElementById(a.getAttribute('href').slice(1));
+    });
+    var setActive = function () {
+      var pos = window.scrollY + 140;
+      var current = 0;
+      cats.forEach(function (cat, i) {
+        if (cat && cat.offsetTop <= pos) current = i;
+      });
+      jumpLinks.forEach(function (a, i) {
+        a.classList.toggle('active', i === current);
+      });
+    };
+    document.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  }
 });
 
 
