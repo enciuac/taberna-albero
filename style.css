@@ -12,7 +12,7 @@
   --ph-bg:#DCD3BF;
   --ph-text:#7A7263;
 }
-*{box-sizing:border-box;}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
 body{
   margin:0;
@@ -22,6 +22,7 @@ body{
   font-size:16px;
   line-height:1.6;
 }
+a, button{-webkit-tap-highlight-color:transparent; outline-color:var(--ochre);}
 h1,h2,h3,.display{
   font-family:'Playfair Display', serif;
   font-weight:600;
@@ -106,6 +107,7 @@ nav a.active{opacity:1;}
 nav a.active::after{
   content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--ochre);
 }
+nav a:active{opacity:1; color:var(--wine);}
 nav.links .nav-call{display:none;}
 .call-btn{
   display:flex; align-items:center; gap:8px;

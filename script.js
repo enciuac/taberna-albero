@@ -146,9 +146,13 @@ function initFeaturedDishes() {
   showSet(0);
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced) return;
 
   setInterval(function () {
+    if (reduced) {
+      idx = (idx + n) % FEATURED_DISHES.length;
+      showSet(idx);
+      return;
+    }
     dishEls.forEach(function (el) { el.classList.add('fading'); });
     setTimeout(function () {
       idx = (idx + n) % FEATURED_DISHES.length;
