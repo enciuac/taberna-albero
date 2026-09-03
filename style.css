@@ -139,6 +139,7 @@ nav.links .nav-call{display:none;}
 .call-btn svg{width:15px; height:15px; flex:none;}
 .nav-toggle{
   display:none; background:none; border:none; cursor:pointer; padding:4px;
+  color:var(--ink);
   -webkit-appearance:none; appearance:none;
   -webkit-tap-highlight-color:transparent; touch-action:manipulation;
 }
