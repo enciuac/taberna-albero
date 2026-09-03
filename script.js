@@ -162,6 +162,7 @@ function initScrollReveal() {
     '.diet-card',
     '.dish-grid-outer',
     '.testi',
+    '.review-card',
     '.wine-list',
     '.gallery-grid > *',
     '.menu-cat',
