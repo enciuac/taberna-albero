@@ -64,4 +64,52 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://tabernaalbero.es/en/contacto.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tabernaalbero.es/contacto.html"/>
   </url>
+  <url>
+    <loc>https://tabernaalbero.es/aviso-legal.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tabernaalbero.es/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tabernaalbero.es/en/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tabernaalbero.es/aviso-legal.html"/>
+  </url>
+  <url>
+    <loc>https://tabernaalbero.es/en/aviso-legal.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tabernaalbero.es/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tabernaalbero.es/en/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tabernaalbero.es/aviso-legal.html"/>
+  </url>
+  <url>
+    <loc>https://tabernaalbero.es/privacidad.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tabernaalbero.es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tabernaalbero.es/en/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tabernaalbero.es/privacidad.html"/>
+  </url>
+  <url>
+    <loc>https://tabernaalbero.es/en/privacidad.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tabernaalbero.es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tabernaalbero.es/en/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tabernaalbero.es/privacidad.html"/>
+  </url>
+  <url>
+    <loc>https://tabernaalbero.es/cookies.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tabernaalbero.es/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tabernaalbero.es/en/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tabernaalbero.es/cookies.html"/>
+  </url>
+  <url>
+    <loc>https://tabernaalbero.es/en/cookies.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tabernaalbero.es/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tabernaalbero.es/en/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tabernaalbero.es/cookies.html"/>
+  </url>
 </urlset>
