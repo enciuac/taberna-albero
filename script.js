@@ -216,7 +216,7 @@ var FEATURED_DISHES_ES = [
   { cat: 'Postre', name: 'Salchichón de chocolate', price: '6,50 €', img: IMG_BASE + 'salchichon-postre.jpg' },
   { cat: 'Especialidad de la casa', name: 'Albóndigas de jabalí', price: '13,00 €', img: IMG_BASE + 'albondigas-jabali.jpg' },
   { cat: 'Típico conquense', name: 'Zarajos', price: '10,00 €', img: IMG_BASE + 'zarajos.jpg' },
-  { cat: 'Entrante', name: 'Tabla de quesos manchegos', price: '20,00 €', img: null },
+  { cat: 'Entrante', name: 'Tabla de quesos manchegos', price: '20,00 €', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
   { cat: 'Especialidad de la casa', name: 'Estofado de ciervo', price: '13,00 €', img: null },
   { cat: 'Nuestras tostas', name: 'Tosta de jamón ibérico', price: '15,00 €', img: null }
 ];
@@ -227,7 +227,7 @@ var FEATURED_DISHES_EN = [
   { cat: 'Dessert', name: 'Chocolate salchichón', price: '€6.50', img: IMG_BASE + 'salchichon-postre.jpg' },
   { cat: 'House specialty', name: 'Wild boar meatballs', price: '€13.00', img: IMG_BASE + 'albondigas-jabali.jpg' },
   { cat: 'Cuenca classic', name: 'Zarajos', price: '€10.00', img: IMG_BASE + 'zarajos.jpg' },
-  { cat: 'Starter', name: 'La Mancha cheese board', price: '€20.00', img: null },
+  { cat: 'Starter', name: 'La Mancha cheese board', price: '€20.00', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
   { cat: 'House specialty', name: 'Venison stew', price: '€13.00', img: null },
   { cat: 'Our tostas', name: 'Iberian ham tosta', price: '€15.00', img: null }
 ];
