@@ -340,7 +340,7 @@ nav.links .nav-call{display:none;}
 .dish-grid .dish.fading{opacity:0;}
 .dish .dish-photo{aspect-ratio:1/1; height:auto; overflow:hidden;}
 .dish .dish-photo img, .dish .dish-photo.ph{height:100%; width:100%; object-fit:cover; border-radius:0; min-height:0;}
-.dish .dish-body{padding:24px 26px;}
+.dish .dish-body{padding:24px 26px; min-height:184px; display:flex; flex-direction:column; justify-content:center;}
 .dish .cat{font-size:0.86rem; font-style:italic; color:var(--ochre-dark); font-weight:600; margin-bottom:10px;}
 .dish h3{font-weight:600; font-size:1.14rem; margin-bottom:8px;}
 .dish .price{color:var(--wine); font-weight:600;}
