@@ -259,29 +259,97 @@ function initScrollReveal() {
 var IS_EN_PAGE = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
 var IMG_BASE = IS_EN_PAGE ? '../img/' : 'img/';
 
-var FEATURED_DISHES_ES = [
-  { cat: 'Especialidad de la casa', name: 'Canelones de rabo de toro', price: '15,00 €', img: IMG_BASE + 'canelones-rabo-toro.jpg' },
+/* Each rotating slot draws from its own themed pool, so the 3 dishes shown
+   always read like a mini menu: para empezar / plato típico / para rematar. */
+var FEATURED_STARTERS_ES = [
+  { cat: 'Entrante', name: 'Ensalada de brotes de canónigos con queso de cabra y mermelada de tomate', price: '13,00 €', img: IMG_BASE + 'ensalada-brotes-canonigos.jpg' },
+  { cat: 'Entrante', name: 'Caracoles en salsa de avellanas', price: '13,00 €', img: IMG_BASE + 'caracoles-salsa-avellanas.jpg' },
+  { cat: 'Entrante', name: 'Cazuela de setas en salsa', price: '13,00 €', img: IMG_BASE + 'cazuela-setas-salsa.jpg' },
+  { cat: 'Entrante', name: 'Paté de perdiz', price: '13,00 €', img: IMG_BASE + 'pate-perdiz.jpg' },
+  { cat: 'Entrante', name: 'Escalivada de pimientos asados con anchoas, berenjena y cebolla', price: '15,00 €', img: IMG_BASE + 'escalivada-pimientos-anchoas.jpg' },
+  { cat: 'Entrante', name: 'Paté de queso cremoso con boletus', price: '13,00 €', img: IMG_BASE + 'pate-queso-cremoso-boletus.jpg' },
+  { cat: 'Entrante', name: 'Guiso de alcachofas con gambón', price: '13,00 €', img: IMG_BASE + 'guiso-alcachofas-gambon.jpg' },
+  { cat: 'Escabeche de la abuela', name: 'Verduritas escabechadas', price: '10,00 €', img: IMG_BASE + 'verduritas-escabechadas.jpg' },
+  { cat: 'Escabeche de la abuela', name: 'Timbal de conejo escabechado', price: '13,00 €', img: IMG_BASE + 'timbal-conejo-escabechado.jpg' },
+  { cat: 'Escabeche de la abuela', name: 'Lomo escabechado en salsa de perdiz', price: '13,00 €', img: IMG_BASE + 'lomo-escabechado-salsa-perdiz.jpg' },
+  { cat: 'Escabeche de la abuela', name: 'Bonito encebollado con vermut a la naranja', price: '14,00 €', img: IMG_BASE + 'bonito-encebollado-vermut-naranja.jpg' }
+];
+
+var FEATURED_TYPICAL_ES = [
   { cat: 'Típico conquense', name: 'Morteruelo', price: '13,00 €', img: IMG_BASE + 'morteruelo.jpg' },
-  { cat: 'Postre', name: 'Salchichón de chocolate', price: '6,50 €', img: IMG_BASE + 'salchichon-postre.jpg' },
-  { cat: 'Especialidad de la casa', name: 'Albóndigas de jabalí', price: '13,00 €', img: IMG_BASE + 'albondigas-jabali.jpg' },
+  { cat: 'Típico conquense', name: 'Ajoarriero', price: '13,00 €', img: IMG_BASE + 'ajoarriero.jpg' },
+  { cat: 'Típico conquense', name: 'Pisto manchego con secreto ibérico', price: '13,00 €', img: IMG_BASE + 'pisto-manchego-secreto-iberico.jpg' },
+  { cat: 'Típico conquense', name: 'Ensaladilla', price: '13,00 €', img: IMG_BASE + 'ensaladilla.jpg' },
+  { cat: 'Típico conquense', name: 'Oreja en salsa', price: '13,00 €', img: IMG_BASE + 'oreja-en-salsa.jpg' },
+  { cat: 'Típico conquense', name: 'Lomo de orza', price: '13,00 €', img: IMG_BASE + 'lomo-de-orza.jpg' },
   { cat: 'Típico conquense', name: 'Zarajos', price: '10,00 €', img: IMG_BASE + 'zarajos.jpg' },
-  { cat: 'Entrante', name: 'Tabla de quesos manchegos', price: '20,00 €', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
+  { cat: 'Típico conquense', name: 'Tabla de quesos manchegos', price: '20,00 €', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
+  { cat: 'Típico conquense', name: 'Tabla de ibéricos', price: '25,00 €', img: IMG_BASE + 'tabla-ibericos.jpg' },
+  { cat: 'Nuestras tostas', name: 'Tosta de jamón ibérico', price: '15,00 €', img: IMG_BASE + 'tosta-jamon-iberico.jpg' },
+  { cat: 'Nuestras tostas', name: 'Tosta de sobrasada con miel', price: '12,50 €', img: IMG_BASE + 'tosta-sobrasada-miel.jpg' },
+  { cat: 'Nuestras tostas', name: 'Tosta de ahumados', price: '12,50 €', img: IMG_BASE + 'tosta-ahumados.jpg' }
+];
+
+var FEATURED_MAINS_ES = [
+  { cat: 'Especialidad de la casa', name: 'Tacos de carrillada de ternera con cebolla encurtida a la naranja', price: '13,00 €', img: IMG_BASE + 'tacos-carrillada-ternera.jpg' },
+  { cat: 'Especialidad de la casa', name: 'Canelones de rabo de toro', price: '15,00 €', img: IMG_BASE + 'canelones-rabo-toro.jpg' },
+  { cat: 'Especialidad de la casa', name: 'Albóndigas de jabalí', price: '13,00 €', img: IMG_BASE + 'albondigas-jabali.jpg' },
+  { cat: 'Especialidad de la casa', name: 'Albóndigas de secreto ibérico con morcilla', price: '13,00 €', img: IMG_BASE + 'albondigas-secreto-iberico-morcilla.jpg' },
+  { cat: 'Especialidad de la casa', name: 'Pan bao relleno de codillo de cerdo con mostaza y manzana', price: '13,00 €', img: IMG_BASE + 'pan-bao-codillo-cerdo.jpg' },
+  { cat: 'Especialidad de la casa', name: 'Quesadilla de carne de ciervo', price: '10,00 €', img: IMG_BASE + 'quesadilla-carne-ciervo.jpg' },
   { cat: 'Especialidad de la casa', name: 'Estofado de ciervo', price: '13,00 €', img: IMG_BASE + 'estofado-ciervo.jpg' },
-  { cat: 'Nuestras tostas', name: 'Tosta de jamón ibérico', price: '15,00 €', img: IMG_BASE + 'tosta-jamon-iberico.jpg' }
+  { cat: 'Postre', name: 'Alajú', price: '6,50 €', img: IMG_BASE + 'alaju.jpg' },
+  { cat: 'Postre', name: 'Salchichón de chocolate', price: '6,50 €', img: IMG_BASE + 'salchichon-postre.jpg' },
+  { cat: 'Postre', name: 'Yogur de leche de cabra con mermelada de arándanos', price: '6,50 €', img: IMG_BASE + 'yogur-leche-cabra-arandanos.jpg' },
+  { cat: 'Postre', name: 'Tarta de queso con avellanas y chocolate', price: '6,50 €', img: IMG_BASE + 'tarta-queso-avellanas-chocolate.jpg' }
 ];
 
-var FEATURED_DISHES_EN = [
-  { cat: 'House specialty', name: 'Oxtail cannelloni', price: '€15.00', img: IMG_BASE + 'canelones-rabo-toro.jpg' },
+var FEATURED_STARTERS_EN = [
+  { cat: 'Starter', name: "Lamb's lettuce salad with goat cheese and tomato jam", price: '€13.00', img: IMG_BASE + 'ensalada-brotes-canonigos.jpg' },
+  { cat: 'Starter', name: 'Snails in hazelnut sauce', price: '€13.00', img: IMG_BASE + 'caracoles-salsa-avellanas.jpg' },
+  { cat: 'Starter', name: 'Wild mushroom casserole in sauce', price: '€13.00', img: IMG_BASE + 'cazuela-setas-salsa.jpg' },
+  { cat: 'Starter', name: 'Partridge pâté', price: '€13.00', img: IMG_BASE + 'pate-perdiz.jpg' },
+  { cat: 'Starter', name: 'Roasted pepper escalivada with anchovies, aubergine and onion', price: '€15.00', img: IMG_BASE + 'escalivada-pimientos-anchoas.jpg' },
+  { cat: 'Starter', name: 'Creamy cheese pâté with porcini mushrooms', price: '€13.00', img: IMG_BASE + 'pate-queso-cremoso-boletus.jpg' },
+  { cat: 'Starter', name: 'Artichoke stew with king prawn', price: '€13.00', img: IMG_BASE + 'guiso-alcachofas-gambon.jpg' },
+  { cat: "Grandma's escabeche", name: 'Pickled vegetables', price: '€10.00', img: IMG_BASE + 'verduritas-escabechadas.jpg' },
+  { cat: "Grandma's escabeche", name: 'Pickled rabbit timbale', price: '€13.00', img: IMG_BASE + 'timbal-conejo-escabechado.jpg' },
+  { cat: "Grandma's escabeche", name: 'Pickled pork loin in partridge sauce', price: '€13.00', img: IMG_BASE + 'lomo-escabechado-salsa-perdiz.jpg' },
+  { cat: "Grandma's escabeche", name: 'Bonito tuna with caramelised onion and orange vermouth', price: '€14.00', img: IMG_BASE + 'bonito-encebollado-vermut-naranja.jpg' }
+];
+
+var FEATURED_TYPICAL_EN = [
   { cat: 'Cuenca classic', name: 'Morteruelo', price: '€13.00', img: IMG_BASE + 'morteruelo.jpg' },
-  { cat: 'Dessert', name: 'Chocolate salchichón', price: '€6.50', img: IMG_BASE + 'salchichon-postre.jpg' },
-  { cat: 'House specialty', name: 'Wild boar meatballs', price: '€13.00', img: IMG_BASE + 'albondigas-jabali.jpg' },
+  { cat: 'Cuenca classic', name: 'Ajoarriero', price: '€13.00', img: IMG_BASE + 'ajoarriero.jpg' },
+  { cat: 'Cuenca classic', name: 'La Mancha-style ratatouille with Iberian pork secreto', price: '€13.00', img: IMG_BASE + 'pisto-manchego-secreto-iberico.jpg' },
+  { cat: 'Cuenca classic', name: 'Ensaladilla', price: '€13.00', img: IMG_BASE + 'ensaladilla.jpg' },
+  { cat: 'Cuenca classic', name: 'Pork ear in sauce', price: '€13.00', img: IMG_BASE + 'oreja-en-salsa.jpg' },
+  { cat: 'Cuenca classic', name: 'Orza-preserved pork loin', price: '€13.00', img: IMG_BASE + 'lomo-de-orza.jpg' },
   { cat: 'Cuenca classic', name: 'Zarajos', price: '€10.00', img: IMG_BASE + 'zarajos.jpg' },
-  { cat: 'Starter', name: 'La Mancha cheese board', price: '€20.00', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
-  { cat: 'House specialty', name: 'Venison stew', price: '€13.00', img: IMG_BASE + 'estofado-ciervo.jpg' },
-  { cat: 'Our tostas', name: 'Iberian ham tosta', price: '€15.00', img: IMG_BASE + 'tosta-jamon-iberico.jpg' }
+  { cat: 'Cuenca classic', name: 'La Mancha cheese board', price: '€20.00', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
+  { cat: 'Cuenca classic', name: 'Iberian cold cuts board', price: '€25.00', img: IMG_BASE + 'tabla-ibericos.jpg' },
+  { cat: 'Our tostas', name: 'Iberian ham tosta', price: '€15.00', img: IMG_BASE + 'tosta-jamon-iberico.jpg' },
+  { cat: 'Our tostas', name: 'Sobrasada tosta with honey', price: '€12.50', img: IMG_BASE + 'tosta-sobrasada-miel.jpg' },
+  { cat: 'Our tostas', name: 'Smoked fish tosta', price: '€12.50', img: IMG_BASE + 'tosta-ahumados.jpg' }
 ];
 
-var FEATURED_DISHES = IS_EN_PAGE ? FEATURED_DISHES_EN : FEATURED_DISHES_ES;
+var FEATURED_MAINS_EN = [
+  { cat: 'House specialty', name: 'Braised beef cheek bites with orange-pickled onion', price: '€13.00', img: IMG_BASE + 'tacos-carrillada-ternera.jpg' },
+  { cat: 'House specialty', name: 'Oxtail cannelloni', price: '€15.00', img: IMG_BASE + 'canelones-rabo-toro.jpg' },
+  { cat: 'House specialty', name: 'Wild boar meatballs', price: '€13.00', img: IMG_BASE + 'albondigas-jabali.jpg' },
+  { cat: 'House specialty', name: 'Iberian pork secreto meatballs with black pudding', price: '€13.00', img: IMG_BASE + 'albondigas-secreto-iberico-morcilla.jpg' },
+  { cat: 'House specialty', name: 'Bao bun filled with pork knuckle, mustard and apple', price: '€13.00', img: IMG_BASE + 'pan-bao-codillo-cerdo.jpg' },
+  { cat: 'House specialty', name: 'Venison quesadilla', price: '€10.00', img: IMG_BASE + 'quesadilla-carne-ciervo.jpg' },
+  { cat: 'House specialty', name: 'Venison stew', price: '€13.00', img: IMG_BASE + 'estofado-ciervo.jpg' },
+  { cat: 'Dessert', name: 'Alajú', price: '€6.50', img: IMG_BASE + 'alaju.jpg' },
+  { cat: 'Dessert', name: 'Chocolate salchichón', price: '€6.50', img: IMG_BASE + 'salchichon-postre.jpg' },
+  { cat: 'Dessert', name: "Goat's milk yoghurt with blueberry jam", price: '€6.50', img: IMG_BASE + 'yogur-leche-cabra-arandanos.jpg' },
+  { cat: 'Dessert', name: 'Cheesecake with hazelnuts and chocolate', price: '€6.50', img: IMG_BASE + 'tarta-queso-avellanas-chocolate.jpg' }
+];
+
+var FEATURED_GROUPS = IS_EN_PAGE
+  ? [FEATURED_STARTERS_EN, FEATURED_TYPICAL_EN, FEATURED_MAINS_EN]
+  : [FEATURED_STARTERS_ES, FEATURED_TYPICAL_ES, FEATURED_MAINS_ES];
 var DISH_ROTATE_MS = 7000;
 
 function renderDish(el, dish) {
@@ -320,31 +388,34 @@ function renderDish(el, dish) {
 
 function initFeaturedDishes() {
   var dishEls = document.querySelectorAll('.dish-grid .dish');
-  if (!dishEls.length || dishEls.length >= FEATURED_DISHES.length) return;
+  if (dishEls.length !== FEATURED_GROUPS.length) return;
 
-  var n = dishEls.length;
-  var idx = 0;
+  var idx = FEATURED_GROUPS.map(function () { return 0; });
 
-  function showSet(startIdx) {
-    for (var i = 0; i < n; i++) {
-      renderDish(dishEls[i], FEATURED_DISHES[(startIdx + i) % FEATURED_DISHES.length]);
-    }
+  function showAll() {
+    dishEls.forEach(function (el, i) {
+      var group = FEATURED_GROUPS[i];
+      renderDish(el, group[idx[i] % group.length]);
+    });
   }
 
-  showSet(0);
+  showAll();
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function advance() {
+    idx = idx.map(function (v, i) { return (v + 1) % FEATURED_GROUPS[i].length; });
+    showAll();
+  }
+
   setInterval(function () {
     if (reduced) {
-      idx = (idx + n) % FEATURED_DISHES.length;
-      showSet(idx);
+      advance();
       return;
     }
     dishEls.forEach(function (el) { el.classList.add('fading'); });
     setTimeout(function () {
-      idx = (idx + n) % FEATURED_DISHES.length;
-      showSet(idx);
+      advance();
       dishEls.forEach(function (el) { el.classList.remove('fading'); });
     }, 400);
   }, DISH_ROTATE_MS);
