@@ -217,8 +217,8 @@ var FEATURED_DISHES_ES = [
   { cat: 'Especialidad de la casa', name: 'Albóndigas de jabalí', price: '13,00 €', img: IMG_BASE + 'albondigas-jabali.jpg' },
   { cat: 'Típico conquense', name: 'Zarajos', price: '10,00 €', img: IMG_BASE + 'zarajos.jpg' },
   { cat: 'Entrante', name: 'Tabla de quesos manchegos', price: '20,00 €', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
-  { cat: 'Especialidad de la casa', name: 'Estofado de ciervo', price: '13,00 €', img: null },
-  { cat: 'Nuestras tostas', name: 'Tosta de jamón ibérico', price: '15,00 €', img: null }
+  { cat: 'Especialidad de la casa', name: 'Estofado de ciervo', price: '13,00 €', img: IMG_BASE + 'estofado-ciervo.jpg' },
+  { cat: 'Nuestras tostas', name: 'Tosta de jamón ibérico', price: '15,00 €', img: IMG_BASE + 'tosta-jamon-iberico.jpg' }
 ];
 
 var FEATURED_DISHES_EN = [
@@ -228,8 +228,8 @@ var FEATURED_DISHES_EN = [
   { cat: 'House specialty', name: 'Wild boar meatballs', price: '€13.00', img: IMG_BASE + 'albondigas-jabali.jpg' },
   { cat: 'Cuenca classic', name: 'Zarajos', price: '€10.00', img: IMG_BASE + 'zarajos.jpg' },
   { cat: 'Starter', name: 'La Mancha cheese board', price: '€20.00', img: IMG_BASE + 'tabla-quesos-manchegos.jpg' },
-  { cat: 'House specialty', name: 'Venison stew', price: '€13.00', img: null },
-  { cat: 'Our tostas', name: 'Iberian ham tosta', price: '€15.00', img: null }
+  { cat: 'House specialty', name: 'Venison stew', price: '€13.00', img: IMG_BASE + 'estofado-ciervo.jpg' },
+  { cat: 'Our tostas', name: 'Iberian ham tosta', price: '€15.00', img: IMG_BASE + 'tosta-jamon-iberico.jpg' }
 ];
 
 var FEATURED_DISHES = IS_EN_PAGE ? FEATURED_DISHES_EN : FEATURED_DISHES_ES;
