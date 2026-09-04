@@ -213,7 +213,7 @@ nav.links .nav-call{display:none;}
 /* ---------- Hero ---------- */
 .hero{
   position:relative;
-  background:linear-gradient(180deg, rgba(29,20,10,.42), rgba(29,20,10,.62)), var(--wine-2);
+  background:linear-gradient(180deg, rgba(20,13,7,.62), rgba(20,13,7,.82)), var(--wine-2);
   color:var(--cream);
   overflow:hidden;
 }
