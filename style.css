@@ -320,6 +320,8 @@ nav.links .nav-call{display:none;}
 }
 .carousel-dots .dot.active{background:var(--ochre); width:20px; border-radius:4px;}
 .carousel-count{font-size:.8rem; font-weight:600; letter-spacing:.3px; color:var(--ink); opacity:.6;}
+.bodega .carousel-dots .dot{background:rgba(250,244,232,.3);}
+.bodega .carousel-count{color:var(--cream); opacity:.75;}
 
 .divider-mark{
   display:flex; align-items:center; justify-content:center; gap:18px;
